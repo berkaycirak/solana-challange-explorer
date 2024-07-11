@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/shared/Navbar";
+import { nunito } from "./fonts";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          "flex h-dvh max-h-dvh flex-col xl:flex-row",
+          nunito.className,
+        )}
+      >
+        <Navbar />
+        <main className="flex-1 overflow-y-auto">{children}</main>
+      </body>
     </html>
   );
 }
