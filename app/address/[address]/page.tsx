@@ -1,10 +1,14 @@
 import React from "react";
-import SignatureHistoryList from "./components/SignatureHistoryList";
+
+import AccountInfo from "./components/AccountInfo";
+import AddressTabs from "./components/AddressTabs";
 
 const ProfilePage = () => {
   return (
-    <div>
-      <SignatureHistoryList />
+    <div className="p-12">
+      <AccountInfo />
+      {/* Address Tabs */}
+      <AddressTabs />
     </div>
   );
 };

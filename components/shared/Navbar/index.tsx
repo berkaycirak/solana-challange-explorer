@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="bg-primary p-4">
+    <nav className="bg-primary px-12 py-4 shadow-lg">
       {/* Top  */}
       <div className="flex items-center justify-between border-b border-primary-foreground/30 pb-2">
         <p className="text-sm font-bold opacity-85">SOL Price: 200$</p>

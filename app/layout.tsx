@@ -5,6 +5,7 @@ import Navbar from "@/components/shared/Navbar";
 import { nunito } from "./fonts";
 import { cn } from "@/lib/utils";
 import Providers from "@/providers";
+import Footer from "@/components/shared/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           <main className="relative h-full flex-1 overflow-y-auto bg-primary/90 py-6">
             {children}
           </main>
+          <Footer />
         </Providers>
       </body>
     </html>
