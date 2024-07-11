@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { debounce, timeToHumanRead, truncateString } from "@/utils";
 import { clusterApiUrl, Connection, Logs, LogsCallback } from "@solana/web3.js";
 import React, { useCallback, useEffect, useState } from "react";
+import ListHeaders from "../ListHeaders";
 
 interface Transaction {
   signature: string;
@@ -21,7 +22,7 @@ interface Transaction {
 const Transactions = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [subscriptionId, setSubscriptionId] = useState<number | null>(null);
-  //   const { data, status } = useLatestTransactions();
+  const { data, status } = useLatestTransactions();
 
   const handleNewTransaction: LogsCallback = useCallback(
     debounce(async (logs: Logs, context) => {
@@ -60,14 +61,16 @@ const Transactions = () => {
 
   return (
     <div>
-      <h4 className="my-12">Latest Transactions 🔥 </h4>
-      {/* {status === "success" &&
+      <h4 className="my-12">Latest Blocks 🔥 </h4>
+
+      <ListHeaders headers={["Blockhash", "Txs", "Block", "Time"]} />
+      {status === "success" &&
         data &&
         data.map((transaction) => (
           <ul
             key={transaction?.blockhash}
             className={cn(
-              "flex items-center justify-between [&_li]:flex-1",
+              "flex items-center justify-between bg-primary/40 [&_li]:flex-1",
               redditMono.className,
             )}
           >
@@ -76,7 +79,7 @@ const Transactions = () => {
             <li>{transaction?.parentSlot}</li>
             <li>{timeToHumanRead(transaction?.blockTime as number)}</li>
           </ul>
-        ))} */}
+        ))}
     </div>
   );
 };

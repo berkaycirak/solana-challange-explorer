@@ -24,7 +24,6 @@ const useTransactionDetail = ({ address }: UseTransactionDetailProps) => {
   const { data, status } = useQuery({
     queryFn: fetchTransactionDetail,
     queryKey: [`transaction_detail_${address}`],
-    refetchInterval: 10000,
   });
 
   return { transactionDetail: data, status };

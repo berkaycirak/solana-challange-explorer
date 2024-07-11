@@ -7,20 +7,20 @@ const useLatestTransactions = () => {
   const [latestBlocks, setLatestBlocks] = useState<number[]>([]);
   const fetchLatestTransactions = async () => {
     const lastSlot = await connection.getSlot();
-    const latestBlocks = await connection.getBlocks(lastSlot - 10, lastSlot);
+    const latestBlocks = await connection.getBlocks(lastSlot - 20, lastSlot);
     setLatestBlocks(latestBlocks);
     const latestBlockInfosPromises = latestBlocks.map((block) => {
       return connection.getBlock(block, { maxSupportedTransactionVersion: 0 });
     });
 
     const blockInfos = await Promise.all(latestBlockInfosPromises);
-
+    console.log(blockInfos);
     return blockInfos;
   };
   const { data, status } = useQuery({
     queryFn: fetchLatestTransactions,
     queryKey: ["latestTransaction", ...latestBlocks],
-    refetchInterval: 10000,
+    refetchInterval: 60000,
   });
 
   return { data, status };
