@@ -17,6 +17,7 @@ import { useForm } from "react-hook-form";
 import React from "react";
 import { SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { checkAddressType } from "@/utils/checkAddressType";
 
 const Search = () => {
   const router = useRouter();
@@ -32,8 +33,10 @@ const Search = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    router.push(`/transactions/${values.search}`);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const type = await checkAddressType(values.search);
+    console.log(type);
+    router.push(`/${type}/${values.search}`);
   }
 
   return (

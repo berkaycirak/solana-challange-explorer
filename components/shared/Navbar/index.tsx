@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import useBalance from "@/hooks/useBalance";
 import WalletSection from "./WalletSection";
 import ClusterSwitcher from "../ClusterSwitcher";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -22,9 +23,14 @@ const Navbar = () => {
       </div>
       {/* Main Navbar */}
       <div className="flex h-[5rem] w-full items-center justify-between">
-        <h4 className={cn("font-bold text-white", redditMono.className)}>
-          Sola<span className="text-purple-500">Scan</span>
-        </h4>
+        <Link
+          href={"/"}
+          className={cn("font-bold text-white", redditMono.className)}
+        >
+          <h4>
+            Sola<span className="text-purple-500">Scan</span>
+          </h4>
+        </Link>
         <WalletSection />
       </div>
     </nav>
