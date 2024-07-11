@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import { nunito } from "./fonts";
 import { cn } from "@/lib/utils";
+import Providers from "@/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,12 +22,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "flex h-dvh max-h-dvh flex-col xl:flex-row",
+          "flex h-dvh max-h-dvh flex-col text-primary-foreground",
           nunito.className,
         )}
       >
-        <Navbar />
-        <main className="flex-1 overflow-y-auto">{children}</main>
+        <Providers>
+          <Navbar />
+          <main className="relative h-full flex-1 overflow-y-auto bg-primary/90 py-6">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
