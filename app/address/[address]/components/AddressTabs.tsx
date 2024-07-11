@@ -1,18 +1,21 @@
 import React from "react";
 import SignatureHistoryList from "../components/SignatureHistoryList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import TokenSignatures from "./TokenSignatures";
 
 const AddressTabs = () => {
   return (
-    <Tabs defaultValue="account" className="">
+    <Tabs defaultValue="history" className="">
       <TabsList>
-        <TabsTrigger value="account">Signature History</TabsTrigger>
-        <TabsTrigger value="password">Tokens</TabsTrigger>
+        <TabsTrigger value="history">History</TabsTrigger>
+        <TabsTrigger value="tokens">Tokens</TabsTrigger>
       </TabsList>
-      <TabsContent value="account" className="mt-6">
+      <TabsContent value="history" className="mt-6">
         <SignatureHistoryList />
       </TabsContent>
-      <TabsContent value="password"></TabsContent>
+      <TabsContent value="tokens">
+        <TokenSignatures />
+      </TabsContent>
     </Tabs>
   );
 };

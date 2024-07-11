@@ -23,7 +23,7 @@ const TransactionSelf = ({
 }: TransactionSelfProps) => {
   return (
     <div className="rounded p-2">
-      <h4 className="mb-2">Overview</h4>
+      <h4>Overview</h4>
       <ListHeaders
         className="bg-primary-foreground/10"
         headers={["Signature 📝", "Block 🧊", "Fee 🔥", "Status", "Time 🕦"]}

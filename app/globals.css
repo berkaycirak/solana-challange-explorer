@@ -90,7 +90,7 @@
     @apply text-base font-bold md:text-3xl xl:text-4xl 2xl:text-5xl;
   }
   h4 {
-    @apply text-xl font-bold md:text-2xl xl:text-3xl;
+    @apply my-4 text-xl font-bold md:text-2xl xl:text-3xl;
   }
   h5 {
     @apply text-base md:text-lg xl:text-xl 2xl:text-2xl;

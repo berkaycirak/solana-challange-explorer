@@ -7,7 +7,7 @@ interface TransactionLogsProps {
 const TransactionLogs = ({ logs }: TransactionLogsProps) => {
   return (
     <div>
-      <h4 className="mb-4">Logs</h4>
+      <h4>Logs</h4>
       {logs?.map((log) => (
         <p className={redditMono.className} key={log}>
           {log}

@@ -11,10 +11,9 @@ const AccountInfo = () => {
     address: params.address as string,
   });
 
-  console.log(accountInfoData);
   return (
     <div className="mb-8">
-      <h4 className="mb-4">Account Details</h4>
+      <h4>Account Details</h4>
       {accountInfoData && (
         <div className="space-y-2 divide-y-2 divide-gray-500 rounded-md bg-primary/20 2xl:max-w-2xl [&_li]:w-[50%] [&_li]:p-4 [&_li]:text-center [&_ul]:flex">
           <ul>
