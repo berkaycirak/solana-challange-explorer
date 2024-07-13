@@ -34,9 +34,18 @@ const Search = () => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const type = await checkAddressType(values.search);
-    console.log(type);
-    router.push(`/${type}/${values.search}`);
+    try {
+      const type = await checkAddressType(values.search);
+
+      form.reset();
+      if (type === "invalid") {
+        form.setError("search", { message: "Please enter a valid address" });
+      } else {
+        router.push(`/${type}/${values.search}`);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

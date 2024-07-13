@@ -11,6 +11,8 @@ import { debounce, timeToHumanRead, truncateString } from "@/utils";
 import { clusterApiUrl, Connection, Logs, LogsCallback } from "@solana/web3.js";
 import React, { useCallback, useEffect, useState } from "react";
 import ListHeaders from "../ListHeaders";
+import { Copy, TriangleAlert } from "lucide-react";
+import { toast } from "sonner";
 
 interface Transaction {
   signature: string;
@@ -74,12 +76,31 @@ const Transactions = () => {
               redditMono.className,
             )}
           >
-            <li>{truncateString(transaction?.blockhash as string, 7, 7)}</li>
+            <li
+              className="group flex cursor-pointer items-center justify-center gap-2 truncate hover:text-green-400/70"
+              onClick={(e) => {
+                toast("Block address is copied to clipboard.");
+                navigator.clipboard.writeText(transaction?.blockhash as string);
+              }}
+            >
+              <Copy size={14} className="invisible group-hover:visible" />
+              {truncateString(transaction?.blockhash as string, 7, 7)}
+            </li>
+
             <li>{transaction?.transactions.length}</li>
             <li>{transaction?.parentSlot}</li>
             <li>{timeToHumanRead(transaction?.blockTime as number)}</li>
           </ul>
         ))}
+      <p className="mt-2 flex items-center gap-1">
+        <TriangleAlert />
+        Since there is a{" "}
+        <span className="rounded-lg bg-green-500 px-2 py-[1px] font-bold text-black">
+          public RPC{" "}
+        </span>
+        endpoint, it is limited to get more blocks. Paid services might be
+        useful to show more blocks here.
+      </p>
     </div>
   );
 };

@@ -1,10 +1,11 @@
 "use client";
 
-import { clusterApiUrl, Connection, PublicKey } from "@solana/web3.js";
+import { useConnection } from "@solana/wallet-adapter-react";
+import { PublicKey } from "@solana/web3.js";
 import { useQuery } from "@tanstack/react-query";
 
 const useAddressDetails = ({ address }: { address: string }) => {
-  const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
+  const { connection } = useConnection();
   const publicKey = new PublicKey(address);
 
   const fetchSignatures = async () => {

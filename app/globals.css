@@ -15,7 +15,7 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #512da8;
+    background: grey;
     border-radius: 10px;
   }
   :root {

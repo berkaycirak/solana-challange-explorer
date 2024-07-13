@@ -7,6 +7,7 @@ import React from "react";
 import Tokens from "./Tokens";
 import ListHeaders from "@/components/shared/ListHeaders";
 import { Coins, Diamond } from "lucide-react";
+import TotalTokensChart from "./TotalTokensChart";
 
 const TokenHoldings = () => {
   const params = useParams();
@@ -29,7 +30,9 @@ const TokenHoldings = () => {
       </div>
 
       <div className="rounded-md bg-primary/20">
-        <ListHeaders headers={["Name", "Symbol", "Balance", "Mint Address"]} />
+        <ListHeaders
+          headers={["Name", "Symbol", "Type", "Balance", "Mint Address"]}
+        />
         <div className="space-y-2 py-4">
           {/* Fungible Tokens */}
           <Tokens tokens={fungibleTokens} />
@@ -37,6 +40,7 @@ const TokenHoldings = () => {
           <Tokens tokens={nonFungibleTokens} />
         </div>
       </div>
+      {/* <TotalTokensChart /> */}
     </section>
   );
 };

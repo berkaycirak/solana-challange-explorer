@@ -9,6 +9,7 @@ import { History } from "lucide-react";
 import { useParams } from "next/navigation";
 
 import useAddressDetails from "@/hooks/useAddressDetails";
+import Skeleton from "react-loading-skeleton";
 
 const SignatureHistoryList = () => {
   // Get info about solana wallet adapter
@@ -29,11 +30,13 @@ const SignatureHistoryList = () => {
           redditMono.className,
         )}
       >
-        {signatureHistoryStatus === "pending"
-          ? "Loading..."
-          : signatureHistoryData?.map((signature) => (
-              <SignatureSelf key={signature.slot} {...signature} />
-            ))}
+        {signatureHistoryStatus === "pending" ? (
+          <Skeleton count={20} baseColor="grey" />
+        ) : (
+          signatureHistoryData?.map((signature) => (
+            <SignatureSelf key={signature.slot} {...signature} />
+          ))
+        )}
       </ul>
     </div>
   );

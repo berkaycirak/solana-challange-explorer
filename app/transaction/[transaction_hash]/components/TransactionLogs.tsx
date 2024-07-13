@@ -8,7 +8,7 @@ const TransactionLogs = ({ logs }: TransactionLogsProps) => {
   return (
     <div>
       <h4>Logs</h4>
-      <div className="rounded-lg bg-primary/20 p-2">
+      <div className="prose rounded-lg bg-primary/20 p-2">
         {logs?.map((log) => (
           <p className={redditMono.className} key={log}>
             {log}

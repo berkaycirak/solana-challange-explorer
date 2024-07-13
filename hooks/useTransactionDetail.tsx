@@ -1,3 +1,4 @@
+import { useConnection } from "@solana/wallet-adapter-react";
 import {
   clusterApiUrl,
   Connection,
@@ -11,7 +12,7 @@ interface UseTransactionDetailProps {
 }
 
 const useTransactionDetail = ({ address }: UseTransactionDetailProps) => {
-  const connection = new Connection(clusterApiUrl("devnet"));
+  const { connection } = useConnection();
 
   const fetchTransactionDetail = async () => {
     const transaction = await connection.getTransaction(address, {
