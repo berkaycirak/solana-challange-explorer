@@ -15,7 +15,7 @@ const TokenHoldings = () => {
   });
 
   return (
-    <section className="flex-1">
+    <section className="flex-1 py-2 xl:max-w-screen-lg">
       <div className="flex items-center gap-4">
         <h4>Token Holdings</h4>
         <div className="flex gap-4 rounded-md bg-primary-foreground/80 px-2 py-1 font-bold text-black [&_span]:flex [&_span]:gap-1">

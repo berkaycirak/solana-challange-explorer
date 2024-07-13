@@ -14,7 +14,6 @@ const useLatestTransactions = () => {
     });
 
     const blockInfos = await Promise.all(latestBlockInfosPromises);
-    console.log(blockInfos);
     return blockInfos;
   };
   const { data, status } = useQuery({

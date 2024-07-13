@@ -9,17 +9,14 @@ import useBalance from "@/hooks/useBalance";
 import WalletSection from "./WalletSection";
 import ClusterSwitcher from "../ClusterSwitcher";
 import Link from "next/link";
+import Topbar from "./Topbar";
 
 const Navbar = () => {
   return (
     <nav className="bg-primary px-12 py-4 shadow-lg">
       {/* Top  */}
       <div className="flex items-center justify-between border-b border-primary-foreground/30 pb-2">
-        <p className="text-sm font-bold opacity-85">SOL Price: 200$</p>
-        <div className="flex items-center gap-4">
-          <ClusterSwitcher />
-          <ThemeSwitcher />
-        </div>
+        <Topbar />
       </div>
       {/* Main Navbar */}
       <div className="flex h-[5rem] w-full items-center justify-between">

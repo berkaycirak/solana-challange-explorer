@@ -5,10 +5,10 @@ import TokenSignatures from "./TokenSignatures";
 
 const AddressTabs = () => {
   return (
-    <Tabs defaultValue="history" className="">
+    <Tabs defaultValue="history" className="mt-4">
       <TabsList>
         <TabsTrigger value="history">History</TabsTrigger>
-        <TabsTrigger value="tokens">Tokens</TabsTrigger>
+        <TabsTrigger value="tokens">Token History</TabsTrigger>
       </TabsList>
       <TabsContent value="history" className="mt-6">
         <SignatureHistoryList />

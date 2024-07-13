@@ -70,7 +70,7 @@ const Transactions = () => {
           <ul
             key={transaction?.blockhash}
             className={cn(
-              "flex items-center justify-between bg-primary/40 [&_li]:flex-1",
+              "flex items-center justify-between bg-primary/40 [&_li]:flex-1 [&_li]:text-center",
               redditMono.className,
             )}
           >
