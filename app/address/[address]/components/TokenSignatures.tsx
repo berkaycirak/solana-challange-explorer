@@ -12,7 +12,11 @@ const TokenSignatures = () => {
   const { tokenSignatures } = useTokenSignatures({
     tokenList: tokenMintAddresses,
   });
-  return <div>TokenSignatures</div>;
+  return (
+    <div className="min-h-[300px] bg-primary/40 p-12">
+      <p className="animate-pulse">That feature will be coming soon...</p>
+    </div>
+  );
 };
 
 export default TokenSignatures;

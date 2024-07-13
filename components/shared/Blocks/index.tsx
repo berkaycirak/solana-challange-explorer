@@ -87,9 +87,13 @@ const Transactions = () => {
               {truncateString(transaction?.blockhash as string, 7, 7)}
             </li>
 
-            <li>{transaction?.transactions.length}</li>
+            <li className="text-green-400">
+              {transaction?.transactions.length}
+            </li>
             <li>{transaction?.parentSlot}</li>
-            <li>{timeToHumanRead(transaction?.blockTime as number)}</li>
+            <li className="opacity-75">
+              {timeToHumanRead(transaction?.blockTime as number)}
+            </li>
           </ul>
         ))}
       <p className="mt-2 flex items-center gap-1">

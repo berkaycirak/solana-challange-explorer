@@ -19,7 +19,7 @@ const Navbar = () => {
         <Topbar />
       </div>
       {/* Main Navbar */}
-      <div className="flex h-[5rem] w-full items-center justify-between">
+      <div className="flex h-[4rem] w-full items-center justify-between">
         <Link
           href={"/"}
           className={cn("font-bold text-white", redditMono.className)}
