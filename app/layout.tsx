@@ -25,14 +25,14 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "mx-auto flex h-dvh max-h-dvh max-w-[1920px] flex-col text-primary-foreground",
+          "mx-auto flex h-dvh max-h-dvh max-w-[1920px] flex-col text-primary dark:text-primary-foreground",
           nunito.className,
         )}
       >
         <Providers>
           <Navbar />
 
-          <main className="relative h-full flex-1 overflow-y-auto bg-primary/90 py-6">
+          <main className="relative h-full flex-1 overflow-y-auto bg-primary-foreground/90 py-6 dark:bg-primary/90">
             <Search />
             {children}
           </main>

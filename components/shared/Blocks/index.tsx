@@ -72,7 +72,7 @@ const Transactions = () => {
           <ul
             key={transaction?.blockhash}
             className={cn(
-              "flex items-center justify-between bg-primary/40 [&_li]:flex-1 [&_li]:text-center",
+              "flex items-center justify-between bg-card dark:bg-primary/40 [&_li]:flex-1 [&_li]:text-center",
               redditMono.className,
             )}
           >
@@ -87,7 +87,7 @@ const Transactions = () => {
               {truncateString(transaction?.blockhash as string, 7, 7)}
             </li>
 
-            <li className="text-green-400">
+            <li className="font-bold text-green-400">
               {transaction?.transactions.length}
             </li>
             <li>{transaction?.parentSlot}</li>

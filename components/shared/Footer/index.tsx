@@ -3,10 +3,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-primary p-2 text-center">
+    <div className="bg-primary-foreground p-2 text-center dark:bg-primary">
       Powered by{" "}
       <Link
-        className="text-purple-500 underline"
+        className="font-bold text-purple-500 underline"
         href="https://github.com/berkaycirak"
         target="_blank"
       >

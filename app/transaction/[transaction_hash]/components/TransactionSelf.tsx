@@ -25,10 +25,10 @@ const TransactionSelf = ({
     <div className="rounded p-2">
       <h4>Overview</h4>
       <ListHeaders
-        className="bg-primary-foreground/10"
+        className="bg-primary/90 dark:bg-primary-foreground/10"
         headers={["Signature 📝", "Block 🧊", "Fee 🔥", "Status", "Time 🕦"]}
       />
-      <ul className="flex items-center space-x-6 bg-primary/50 py-2 [&_li]:flex-1 [&_li]:text-center">
+      <ul className="flex items-center space-x-6 rounded bg-primary-foreground/90 py-2 dark:bg-primary/50 [&_li]:flex-1 [&_li]:text-center">
         <li>{truncateString(signature, 7, 7)}</li>
         <li>{slot}</li>
         <li>{fee / LAMPORTS_PER_SOL} </li>

@@ -60,20 +60,20 @@ const Search = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <div className="flex items-center border-b border-purple-500">
+                <div className="flex items-center border-b-2 border-purple-500">
                   <Input
                     {...field}
                     placeholder="Search tokens, addresses and NFTs"
-                    className="rounded-none border-0 bg-inherit placeholder:font-bold placeholder:text-white"
+                    className="rounded-none border-0 bg-inherit placeholder:font-bold dark:placeholder:text-white"
                   />
-                  <Button type="submit" className="">
+                  <Button type="submit" className="mb-[1px]">
                     <SearchIcon size={16} />
                   </Button>
                 </div>
               </FormControl>
               <FormDescription>
                 You can search for any block, address, signature or etc. on
-                Solana
+                Solana...
               </FormDescription>
               <FormMessage />
             </FormItem>
