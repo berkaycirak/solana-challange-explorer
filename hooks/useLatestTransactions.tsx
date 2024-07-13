@@ -23,7 +23,7 @@ const useLatestTransactions = () => {
   };
   const { data, status } = useQuery({
     queryFn: fetchLatestTransactions,
-    queryKey: ["latestTransaction", ...latestBlocks],
+    queryKey: ["latestTransaction"],
     refetchInterval: 1 * 60 * 1000, // Every 1 mins
   });
 
